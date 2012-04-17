@@ -1,0 +1,243 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8D36B2E153D3AF000E60A8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D36B2D153D3AF000E60A8B /* Foundation.framework */; };
+		F8D36B31153D3AF000E60A8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D36B30153D3AF000E60A8B /* main.m */; };
+		F8D36B35153D3AF000E60A8B /* Cupertino_Yankee_Example.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F8D36B34153D3AF000E60A8B /* Cupertino_Yankee_Example.1 */; };
+		F8D36B41153D3B1400E60A8B /* NSDate+CupertinoYankee.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D36B3F153D3B1400E60A8B /* NSDate+CupertinoYankee.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8D36B27153D3AF000E60A8B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				F8D36B35153D3AF000E60A8B /* Cupertino_Yankee_Example.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F8D36B29153D3AF000E60A8B /* Cupertino Yankee Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Cupertino Yankee Example"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8D36B2D153D3AF000E60A8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8D36B30153D3AF000E60A8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8D36B33153D3AF000E60A8B /* Cupertino Yankee Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cupertino Yankee Example-Prefix.pch"; sourceTree = "<group>"; };
+		F8D36B34153D3AF000E60A8B /* Cupertino_Yankee_Example.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Cupertino_Yankee_Example.1; sourceTree = "<group>"; };
+		F8D36B3F153D3B1400E60A8B /* NSDate+CupertinoYankee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+CupertinoYankee.m"; path = "../../NSDate+CupertinoYankee.m"; sourceTree = "<group>"; };
+		F8D36B40153D3B1400E60A8B /* NSDate+CupertinoYankee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+CupertinoYankee.h"; path = "../../NSDate+CupertinoYankee.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8D36B26153D3AF000E60A8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8D36B2E153D3AF000E60A8B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8D36B1E153D3AF000E60A8B = {
+			isa = PBXGroup;
+			children = (
+				F8D36B2F153D3AF000E60A8B /* Cupertino Yankee Example */,
+				F8D36B2C153D3AF000E60A8B /* Frameworks */,
+				F8D36B2A153D3AF000E60A8B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8D36B2A153D3AF000E60A8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8D36B29153D3AF000E60A8B /* Cupertino Yankee Example */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8D36B2C153D3AF000E60A8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8D36B2D153D3AF000E60A8B /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8D36B2F153D3AF000E60A8B /* Cupertino Yankee Example */ = {
+			isa = PBXGroup;
+			children = (
+				F8D36B3F153D3B1400E60A8B /* NSDate+CupertinoYankee.m */,
+				F8D36B40153D3B1400E60A8B /* NSDate+CupertinoYankee.h */,
+				F8D36B30153D3AF000E60A8B /* main.m */,
+				F8D36B34153D3AF000E60A8B /* Cupertino_Yankee_Example.1 */,
+				F8D36B32153D3AF000E60A8B /* Supporting Files */,
+			);
+			path = "Cupertino Yankee Example";
+			sourceTree = "<group>";
+		};
+		F8D36B32153D3AF000E60A8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8D36B33153D3AF000E60A8B /* Cupertino Yankee Example-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8D36B28153D3AF000E60A8B /* Cupertino Yankee Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8D36B38153D3AF000E60A8B /* Build configuration list for PBXNativeTarget "Cupertino Yankee Example" */;
+			buildPhases = (
+				F8D36B25153D3AF000E60A8B /* Sources */,
+				F8D36B26153D3AF000E60A8B /* Frameworks */,
+				F8D36B27153D3AF000E60A8B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cupertino Yankee Example";
+			productName = "Cupertino Yankee Example";
+			productReference = F8D36B29153D3AF000E60A8B /* Cupertino Yankee Example */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8D36B20153D3AF000E60A8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = F8D36B23153D3AF000E60A8B /* Build configuration list for PBXProject "Cupertino Yankee Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F8D36B1E153D3AF000E60A8B;
+			productRefGroup = F8D36B2A153D3AF000E60A8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8D36B28153D3AF000E60A8B /* Cupertino Yankee Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8D36B25153D3AF000E60A8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8D36B31153D3AF000E60A8B /* main.m in Sources */,
+				F8D36B41153D3B1400E60A8B /* NSDate+CupertinoYankee.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F8D36B36153D3AF000E60A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F8D36B37153D3AF000E60A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F8D36B39153D3AF000E60A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cupertino Yankee Example/Cupertino Yankee Example-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F8D36B3A153D3AF000E60A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cupertino Yankee Example/Cupertino Yankee Example-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8D36B23153D3AF000E60A8B /* Build configuration list for PBXProject "Cupertino Yankee Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8D36B36153D3AF000E60A8B /* Debug */,
+				F8D36B37153D3AF000E60A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8D36B38153D3AF000E60A8B /* Build configuration list for PBXNativeTarget "Cupertino Yankee Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8D36B39153D3AF000E60A8B /* Debug */,
+				F8D36B3A153D3AF000E60A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8D36B20153D3AF000E60A8B /* Project object */;
+}
