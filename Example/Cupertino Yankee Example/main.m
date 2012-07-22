@@ -28,14 +28,14 @@ int main (int argc, const char * argv[]) {
     @autoreleasepool {
         NSDate *date = [NSDate date];
         NSLog(@"Current Time: %@", date);
-        NSLog(@"Beginning of Day:%@", [date beginningOfDay]);
-        NSLog(@"End of Day:%@", [date endOfDay]);
-        NSLog(@"Beginning of Week:%@", [date beginningOfWeek]);
-        NSLog(@"End of Week:%@", [date endOfWeek]);
-        NSLog(@"Beginning of Month:%@", [date beginningOfMonth]);
-        NSLog(@"End of Month:%@", [date endOfMonth]);
-        NSLog(@"Beginning of Year:%@", [date beginningOfYear]);
-        NSLog(@"End of Year:%@", [date endOfYear]);
+        NSLog(@"Beginning of Day: %@", [date beginningOfDay]);
+        NSLog(@"End of Day: %@", [date endOfDay]);
+        NSLog(@"Beginning of Week: %@", [date beginningOfWeek]);
+        NSLog(@"End of Week: %@", [date endOfWeek]);
+        NSLog(@"Beginning of Month: %@", [date beginningOfMonth]);
+        NSLog(@"End of Month: %@", [date endOfMonth]);
+        NSLog(@"Beginning of Year: %@", [date beginningOfYear]);
+        NSLog(@"End of Year: %@", [date endOfYear]);
     }
     
     return 0;

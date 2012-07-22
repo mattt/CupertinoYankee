@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		929B140615B8FD0A00F7AEE5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929B140515B8FD0A00F7AEE5 /* SenTestingKit.framework */; };
+		929B140815B8FD0A00F7AEE5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929B140715B8FD0A00F7AEE5 /* Cocoa.framework */; };
+		929B141215B8FD0A00F7AEE5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929B141015B8FD0A00F7AEE5 /* InfoPlist.strings */; };
+		929B141515B8FD0A00F7AEE5 /* CupertinoYankeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B141415B8FD0A00F7AEE5 /* CupertinoYankeeTests.m */; };
+		929B142815BC530A00F7AEE5 /* NSDate+CupertinoYankee.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D36B3F153D3B1400E60A8B /* NSDate+CupertinoYankee.m */; };
 		F8D36B2E153D3AF000E60A8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D36B2D153D3AF000E60A8B /* Foundation.framework */; };
 		F8D36B31153D3AF000E60A8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D36B30153D3AF000E60A8B /* main.m */; };
 		F8D36B35153D3AF000E60A8B /* Cupertino_Yankee_Example.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = F8D36B34153D3AF000E60A8B /* Cupertino_Yankee_Example.1 */; };
@@ -27,6 +32,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		929B140415B8FD0A00F7AEE5 /* CupertinoYankeeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CupertinoYankeeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		929B140515B8FD0A00F7AEE5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		929B140715B8FD0A00F7AEE5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		929B140A15B8FD0A00F7AEE5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		929B140B15B8FD0A00F7AEE5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		929B140C15B8FD0A00F7AEE5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		929B140F15B8FD0A00F7AEE5 /* CupertinoYankeeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CupertinoYankeeTests-Info.plist"; sourceTree = "<group>"; };
+		929B141115B8FD0A00F7AEE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		929B141315B8FD0A00F7AEE5 /* CupertinoYankeeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CupertinoYankeeTests.h; sourceTree = "<group>"; };
+		929B141415B8FD0A00F7AEE5 /* CupertinoYankeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CupertinoYankeeTests.m; sourceTree = "<group>"; };
+		929B141615B8FD0A00F7AEE5 /* CupertinoYankeeTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CupertinoYankeeTests-Prefix.pch"; sourceTree = "<group>"; };
 		F8D36B29153D3AF000E60A8B /* Cupertino Yankee Example */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Cupertino Yankee Example"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D36B2D153D3AF000E60A8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8D36B30153D3AF000E60A8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -37,6 +53,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		929B140015B8FD0A00F7AEE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				929B140615B8FD0A00F7AEE5 /* SenTestingKit.framework in Frameworks */,
+				929B140815B8FD0A00F7AEE5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8D36B26153D3AF000E60A8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,10 +73,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		929B140915B8FD0A00F7AEE5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				929B140A15B8FD0A00F7AEE5 /* AppKit.framework */,
+				929B140B15B8FD0A00F7AEE5 /* CoreData.framework */,
+				929B140C15B8FD0A00F7AEE5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		929B140D15B8FD0A00F7AEE5 /* CupertinoYankeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				929B141315B8FD0A00F7AEE5 /* CupertinoYankeeTests.h */,
+				929B141415B8FD0A00F7AEE5 /* CupertinoYankeeTests.m */,
+				929B140E15B8FD0A00F7AEE5 /* Supporting Files */,
+			);
+			path = CupertinoYankeeTests;
+			sourceTree = "<group>";
+		};
+		929B140E15B8FD0A00F7AEE5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				929B140F15B8FD0A00F7AEE5 /* CupertinoYankeeTests-Info.plist */,
+				929B141015B8FD0A00F7AEE5 /* InfoPlist.strings */,
+				929B141615B8FD0A00F7AEE5 /* CupertinoYankeeTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		F8D36B1E153D3AF000E60A8B = {
 			isa = PBXGroup;
 			children = (
 				F8D36B2F153D3AF000E60A8B /* Cupertino Yankee Example */,
+				929B140D15B8FD0A00F7AEE5 /* CupertinoYankeeTests */,
 				F8D36B2C153D3AF000E60A8B /* Frameworks */,
 				F8D36B2A153D3AF000E60A8B /* Products */,
 			);
@@ -61,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				F8D36B29153D3AF000E60A8B /* Cupertino Yankee Example */,
+				929B140415B8FD0A00F7AEE5 /* CupertinoYankeeTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				F8D36B2D153D3AF000E60A8B /* Foundation.framework */,
+				929B140515B8FD0A00F7AEE5 /* SenTestingKit.framework */,
+				929B140715B8FD0A00F7AEE5 /* Cocoa.framework */,
+				929B140915B8FD0A00F7AEE5 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -76,8 +136,8 @@
 		F8D36B2F153D3AF000E60A8B /* Cupertino Yankee Example */ = {
 			isa = PBXGroup;
 			children = (
-				F8D36B3F153D3B1400E60A8B /* NSDate+CupertinoYankee.m */,
 				F8D36B40153D3B1400E60A8B /* NSDate+CupertinoYankee.h */,
+				F8D36B3F153D3B1400E60A8B /* NSDate+CupertinoYankee.m */,
 				F8D36B30153D3AF000E60A8B /* main.m */,
 				F8D36B34153D3AF000E60A8B /* Cupertino_Yankee_Example.1 */,
 				F8D36B32153D3AF000E60A8B /* Supporting Files */,
@@ -96,6 +156,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		929B140315B8FD0A00F7AEE5 /* CupertinoYankeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 929B141915B8FD0A00F7AEE5 /* Build configuration list for PBXNativeTarget "CupertinoYankeeTests" */;
+			buildPhases = (
+				929B13FF15B8FD0A00F7AEE5 /* Sources */,
+				929B140015B8FD0A00F7AEE5 /* Frameworks */,
+				929B140115B8FD0A00F7AEE5 /* Resources */,
+				929B140215B8FD0A00F7AEE5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CupertinoYankeeTests;
+			productName = CupertinoYankeeTests;
+			productReference = 929B140415B8FD0A00F7AEE5 /* CupertinoYankeeTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		F8D36B28153D3AF000E60A8B /* Cupertino Yankee Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8D36B38153D3AF000E60A8B /* Build configuration list for PBXNativeTarget "Cupertino Yankee Example" */;
@@ -134,11 +212,48 @@
 			projectRoot = "";
 			targets = (
 				F8D36B28153D3AF000E60A8B /* Cupertino Yankee Example */,
+				929B140315B8FD0A00F7AEE5 /* CupertinoYankeeTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		929B140115B8FD0A00F7AEE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				929B141215B8FD0A00F7AEE5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		929B140215B8FD0A00F7AEE5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		929B13FF15B8FD0A00F7AEE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				929B142815BC530A00F7AEE5 /* NSDate+CupertinoYankee.m in Sources */,
+				929B141515B8FD0A00F7AEE5 /* CupertinoYankeeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F8D36B25153D3AF000E60A8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,7 +265,44 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		929B141015B8FD0A00F7AEE5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				929B141115B8FD0A00F7AEE5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		929B141715B8FD0A00F7AEE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CupertinoYankeeTests/CupertinoYankeeTests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "CupertinoYankeeTests/CupertinoYankeeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		929B141815B8FD0A00F7AEE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CupertinoYankeeTests/CupertinoYankeeTests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "CupertinoYankeeTests/CupertinoYankeeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		F8D36B36153D3AF000E60A8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -219,6 +371,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		929B141915B8FD0A00F7AEE5 /* Build configuration list for PBXNativeTarget "CupertinoYankeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				929B141715B8FD0A00F7AEE5 /* Debug */,
+				929B141815B8FD0A00F7AEE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F8D36B23153D3AF000E60A8B /* Build configuration list for PBXProject "Cupertino Yankee Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
