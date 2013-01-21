@@ -43,15 +43,10 @@
 - (NSDate *)beginningOfWeek {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:self];
-    
-		// Figure out our offset from Monday, then subtract from current day
-		// Gregorian calendar considers Sunday to be first day of the week
-		// 1 = Sunday, 2 = Monday, 3 = Tuesday, etc
-		
-		// Figure out our offset, taking into account a special case if today is Sunday
-		NSInteger offset = ([components weekday] == 1) ? 6 : [components weekday] - 2;
-		[components setDay:[components day] - offset];
-	
+
+    NSUInteger offset = ([components weekday] == [calendar firstWeekday]) ? 6 : [components weekday] - 2;
+    [components setDay:[components day] - offset];
+
     return [calendar dateFromComponents:components];
 }
 
