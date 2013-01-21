@@ -211,7 +211,7 @@
 		F8D36B20153D3AF000E60A8B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = F8D36B23153D3AF000E60A8B /* Build configuration list for PBXProject "Cupertino Yankee Example" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -282,6 +282,7 @@
 		929B141715B8FD0A00F7AEE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cupertino Yankee Tests/CupertinoYankeeTests-Prefix.pch";
@@ -295,6 +296,7 @@
 		929B141815B8FD0A00F7AEE5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Cupertino Yankee Tests/CupertinoYankeeTests-Prefix.pch";
