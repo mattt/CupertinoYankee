@@ -64,6 +64,18 @@
 	STAssertEqualObjects([date endOfDay], [NSDate dateWithString:@"2012-07-19 23:59:59 +0000"], nil);
 }
 
+- (void)testBeginningOfWeekIsFirstWeekday
+{
+    // NSCalendar's -firstWeekday defines when the week begins,
+    // therefore the date returned by -beginningOfWeek should have its weekday == firstWeekday
+    // E.g. in certain locale's the first day of the week is Sunday (firstWeekday == 1),
+    // but in a different it may be Monday (firstWeekday == 2)
+    NSDate *today = [NSDate date];
+    NSDate *beginningOfTodaysWeek = [today beginningOfWeek];
+    NSDateComponents *weekdayComponent = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit fromDate:beginningOfTodaysWeek];
+    STAssertEquals([[NSCalendar currentCalendar] firstWeekday], (NSUInteger)weekdayComponent.weekday, nil);
+}
+
 - (void)testBeginningOfWeek {
 	// Thursday, July 19, 2012 2:30:45 PM
 	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
