@@ -44,7 +44,7 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:self];
 
-    NSUInteger offset = ([components weekday] == [calendar firstWeekday]) ? 6 : [components weekday] - 2;
+    NSInteger offset = [components weekday] - (NSInteger)[calendar firstWeekday];
     [components setDay:[components day] - offset];
 
     return [calendar dateFromComponents:components];
