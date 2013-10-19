@@ -26,6 +26,7 @@
 
 - (NSDate *)beginningOfDay {
     NSCalendar *calendar = [NSCalendar currentCalendar];
+
     NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:self];
     
     return [calendar dateFromComponents:components];
@@ -40,8 +41,11 @@
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfDay] options:0] dateByAddingTimeInterval:-1];
 }
 
+#pragma mark -
+
 - (NSDate *)beginningOfWeek {
     NSCalendar *calendar = [NSCalendar currentCalendar];
+
     NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:self];
 
     NSInteger offset = [components weekday] - (NSInteger)[calendar firstWeekday];
@@ -56,10 +60,14 @@
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setWeek:1];
     
-    return [[calendar dateByAddingComponents:components toDate:[self beginningOfWeek] options:0] dateByAddingTimeInterval:-1];}
+    return [[calendar dateByAddingComponents:components toDate:[self beginningOfWeek] options:0] dateByAddingTimeInterval:-1];
+}
+
+#pragma mark -
 
 - (NSDate *)beginningOfMonth {
     NSCalendar *calendar = [NSCalendar currentCalendar];
+
     NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
         
     return [calendar dateFromComponents:components];
@@ -74,8 +82,11 @@
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfMonth] options:0] dateByAddingTimeInterval:-1];
 }
 
+#pragma mark -
+
 - (NSDate *)beginningOfYear {
     NSCalendar *calendar = [NSCalendar currentCalendar];
+
     NSDateComponents *components = [calendar components:NSYearCalendarUnit fromDate:self];
     
     return [calendar dateFromComponents:components];
