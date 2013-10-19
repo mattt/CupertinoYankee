@@ -64,8 +64,7 @@
 	STAssertEqualObjects([date endOfDay], [NSDate dateWithString:@"2012-07-19 23:59:59 +0000"], nil);
 }
 
-- (void)testBeginningOfWeekIsFirstWeekday
-{
+- (void)testBeginningOfWeekIsFirstWeekday {
     // NSCalendar's -firstWeekday defines when the week begins,
     // therefore the date returned by -beginningOfWeek should have its weekday == firstWeekday
     // E.g. in certain locale's the first day of the week is Sunday (firstWeekday == 1),
@@ -80,41 +79,28 @@
 	// Thursday, July 19, 2012 2:30:45 PM
 	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
 	
-	// Should be Monday, July 16, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfWeek], [NSDate dateWithString:@"2012-07-16 00:00:00 +0000"], nil);
-	
-	// Also test Sunday since that's a special case
-	// Sunday, July 22, 2012 2:30:45 PM
-	date = [NSDate dateWithString:@"2012-07-22 14:30:45 +0000"];
+	// Should be Sunday, July 15, 2012 at 12:00:00 AM
+	STAssertEqualObjects([date beginningOfWeek], [NSDate dateWithString:@"2012-07-15 00:00:00 +0000"], nil);
 
-	// Should be Monday, July 16, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfWeek], [NSDate dateWithString:@"2012-07-16 00:00:00 +0000"], nil);
+	// Sunday, July 15, 2012 2:30:45 PM
+	date = [NSDate dateWithString:@"2012-07-15 14:30:45 +0000"];
 	
-	// Monday, July 16, 2012 2:30:45 PM
-	date = [NSDate dateWithString:@"2012-07-16 14:30:45 +0000"];
-	
-	// Should be Monday, July 16, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfWeek], [NSDate dateWithString:@"2012-07-16 00:00:00 +0000"], nil);
+	// Should be Sunday, July 15, 2012 at 12:00:00 AM
+	STAssertEqualObjects([date beginningOfWeek], [NSDate dateWithString:@"2012-07-15 00:00:00 +0000"], nil);
 }
 
 - (void)testEndOfWeek {
 	// Thursday, July 19, 2012 2:30:45 PM
 	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
 
-	// Should be Sunday, July 22, 2012 at 11:59:59 PM
-	STAssertEqualObjects([date endOfWeek], [NSDate dateWithString:@"2012-07-22 23:59:59 +0000"], nil);
-	
-	// Sunday, July 22, 2012 2:30:45 PM
-	date = [NSDate dateWithString:@"2012-07-22 14:30:45 +0000"];
+	// Should be Saturday, July 21, 2012 at 11:59:59 PM
+	STAssertEqualObjects([date endOfWeek], [NSDate dateWithString:@"2012-07-21 23:59:59 +0000"], nil);
 
-	// Should be Sunday, July 22, 2012 at 11:59:59 PM
-	STAssertEqualObjects([date endOfWeek], [NSDate dateWithString:@"2012-07-22 23:59:59 +0000"], nil);
-	
 	// Monday, July 16, 2012 12:00:00 AM
 	date = [NSDate dateWithString:@"2012-07-16 00:00:00 +0000"];
 	
 	// Should be Sunday, July 22, 2012 at 11:59:59 PM
-	STAssertEqualObjects([date endOfWeek], [NSDate dateWithString:@"2012-07-22 23:59:59 +0000"], nil);
+	STAssertEqualObjects([date endOfWeek], [NSDate dateWithString:@"2012-07-21 23:59:59 +0000"], nil);
 }
 
 - (void)testBeginningOfMonth {
@@ -144,7 +130,6 @@
 	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
 	
 	// Should be January 1, 2012 at 12:00:00 AM
-	// Note: changed timezone to take daylight savings time into account
 	STAssertEqualObjects([date beginningOfYear], [NSDate dateWithString:@"2012-01-01 00:00:00 +0000"], nil);
 }
 
