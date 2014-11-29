@@ -1,13 +1,16 @@
 # A Cupertino Yankee in Scott Forstall's Court
+
 **An NSDate Category With Locale-Aware Calculations for Beginning & End of Day, Week, Month, and Year**
 
 > **Thompson's Law**: Any code that performs sufficiently complex date calculations using naïve arithmetic means has a non-zero chance of causing a Y2K-style collapse of the global technology infrastructure.
 
 If your code defines `kSecondsInDay`, `kSecondsInWeek`--or worst of all--`kSecondsInMonth` (seriously, what would you set for that?)... you may want to reconsider. Date and time systems are [really, really complicated](http://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time). Between all of the [time zones](http://en.wikipedia.org/wiki/List_of_time_zones_by_country), [calendars](http://en.wikipedia.org/wiki/List_of_calendars) and other locale-specific information you should be prepared for, you really can't get it right yourself.
 
-Thank `$DEITY` for `NSCalendar` is all I'm saying. Anyway, this library uses `NSCalendar` and `NSDateComponents` exclusively for date calculation, so you'll handle everything from [leap years](http://en.wikipedia.org/wiki/Leap_year) to [leap months](http://en.wikipedia.org/wiki/Hebrew_calendar#Leap_months) like a champ.
+Thank `$DEITY` for `NSCalendar` is all I'm saying.
 
-## Example Usage
+Anyway, this library uses `NSCalendar` and `NSDateComponents` exclusively for date calculation, so you'll handle everything from [leap years](http://en.wikipedia.org/wiki/Leap_year) to [leap months](http://en.wikipedia.org/wiki/Hebrew_calendar#Leap_months) like a champ.
+
+## Usage
 
 ``` objective-c
 NSLog(@"Current Time: %@", date);
