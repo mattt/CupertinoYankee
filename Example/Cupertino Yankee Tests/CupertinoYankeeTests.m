@@ -40,11 +40,10 @@ static NSDate * CYDateFromString(NSString *string) {
 }
 
 @interface CupertinoYankeeTests : XCTestCase
-@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, copy) NSDate *date;
 @end
 
 @implementation CupertinoYankeeTests
-@synthesize date = _date;
 
 - (void)setUp {
     [super setUp];
