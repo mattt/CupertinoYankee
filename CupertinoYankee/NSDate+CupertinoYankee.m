@@ -58,7 +58,7 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setDay:1];
+    components.day = 1;
     
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfDay] options:0] dateByAddingTimeInterval:-1];
 }
@@ -70,8 +70,8 @@
 
     NSDateComponents *components = [calendar components:CYCalendarUnitYear | CYCalendarUnitMonth | CYCalendarUnitWeekday | CYCalendarUnitDay fromDate:self];
 
-    NSInteger offset = [components weekday] - (NSInteger)[calendar firstWeekday];
-    [components setDay:[components day] - offset];
+    NSInteger offset = components.weekday - (NSInteger)calendar.firstWeekday;
+    components.day = components.day - offset;
 
     return [calendar dateFromComponents:components];
 }
@@ -80,8 +80,8 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setWeekOfMonth:1];
-    
+    components.weekOfMonth = 1;
+
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfWeek] options:0] dateByAddingTimeInterval:-1];
 }
 
@@ -99,7 +99,7 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setMonth:1];
+    components.month = 1;
     
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfMonth] options:0] dateByAddingTimeInterval:-1];
 }
@@ -118,8 +118,8 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setYear:1];
-    
+    components.year = 1;
+
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfYear] options:0] dateByAddingTimeInterval:-1];
 }
 
