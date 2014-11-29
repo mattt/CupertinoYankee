@@ -21,125 +21,86 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "CupertinoYankeeTests.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
+
 #import "NSDate+CupertinoYankee.h"
 
-@implementation CupertinoYankeeTests
+static NSDate * CYDateFromString(NSString *string) {
+    static NSDateFormatter *_dateFormatter = nil;
 
-+ (void)setUp {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        _dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        _dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZZZZZ";
+    });
+
+    return [_dateFormatter dateFromString:string];
+}
+
+@interface CupertinoYankeeTests : XCTestCase
+@property (nonatomic, strong) NSDate *date;
+@end
+
+@implementation CupertinoYankeeTests
+@synthesize date = _date;
+
+- (void)setUp {
+    [super setUp];
+
     [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+
+    self.date = CYDateFromString(@"2012-07-19 14:30:45 +0000");
+}
+
+#pragma mark -
+
+- (void)testDate {
+    XCTAssertNotNil(self.date);
 }
 
 - (void)testBeginningOfDay {
-	// Thursday, July 19, 2012 2:30:45 PM
-	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
-
-	// Should be Thursday, July 19, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfDay], [NSDate dateWithString:@"2012-07-19 00:00:00 +0000"], nil);
-	
-	// Thursday, July 19, 2012 11:59:59 PM
-	date = [NSDate dateWithString:@"2012-07-19 23:59:59 +0000"];
-	
-	// Should be Thursday, July 19, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfDay], [NSDate dateWithString:@"2012-07-19 00:00:00 +0000"], nil);
-	
-	// Thursday, July 19, 2012 12:00:01 PM
-	date = [NSDate dateWithString:@"2012-07-19 00:00:01 +0000"];
-	
-	// Should be Thursday, July 19, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfDay], [NSDate dateWithString:@"2012-07-19 00:00:00 +0000"], nil);
+	XCTAssertEqualObjects([self.date beginningOfDay], CYDateFromString(@"2012-07-19 00:00:00 +0000"));
 }
 
 - (void)testEndOfDay {
-	// Thursday, July 19, 2012 2:30:45 PM
-	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
-
-	// Should be Thursday, July 19, 2012 at 11:59:59 PM
-	STAssertEqualObjects([date endOfDay], [NSDate dateWithString:@"2012-07-19 23:59:59 +0000"], nil);
-	
-	// Thursday, July 19, 2012 11:59:00 PM
-	date = [NSDate dateWithString:@"2012-07-19 23:59:00 +0000"];
-	
-	// Should be Thursday, July 19, 2012 at 11:59:59 PM
-	STAssertEqualObjects([date endOfDay], [NSDate dateWithString:@"2012-07-19 23:59:59 +0000"], nil);
+	XCTAssertEqualObjects([self.date endOfDay], CYDateFromString(@"2012-07-19 23:59:59 +0000"));
 }
 
 - (void)testBeginningOfWeekIsFirstWeekday {
-    // NSCalendar's -firstWeekday defines when the week begins,
-    // therefore the date returned by -beginningOfWeek should have its weekday == firstWeekday
-    // E.g. in certain locale's the first day of the week is Sunday (firstWeekday == 1),
-    // but in a different it may be Monday (firstWeekday == 2)
     NSDate *today = [NSDate date];
     NSDate *beginningOfTodaysWeek = [today beginningOfWeek];
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated"
     NSDateComponents *weekdayComponent = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit fromDate:beginningOfTodaysWeek];
-    STAssertEquals([[NSCalendar currentCalendar] firstWeekday], (NSUInteger)weekdayComponent.weekday, nil);
+#pragma clang diagnostic pop
+    XCTAssertEqual([[NSCalendar currentCalendar] firstWeekday], (NSUInteger)weekdayComponent.weekday);
 }
 
 - (void)testBeginningOfWeek {
-	// Thursday, July 19, 2012 2:30:45 PM
-	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
-	
-	// Should be Sunday, July 15, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfWeek], [NSDate dateWithString:@"2012-07-15 00:00:00 +0000"], nil);
-
-	// Sunday, July 15, 2012 2:30:45 PM
-	date = [NSDate dateWithString:@"2012-07-15 14:30:45 +0000"];
-	
-	// Should be Sunday, July 15, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfWeek], [NSDate dateWithString:@"2012-07-15 00:00:00 +0000"], nil);
+	XCTAssertEqualObjects([self.date beginningOfWeek], CYDateFromString(@"2012-07-15 00:00:00 +0000"));
 }
 
 - (void)testEndOfWeek {
-	// Thursday, July 19, 2012 2:30:45 PM
-	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
-
-	// Should be Saturday, July 21, 2012 at 11:59:59 PM
-	STAssertEqualObjects([date endOfWeek], [NSDate dateWithString:@"2012-07-21 23:59:59 +0000"], nil);
-
-	// Monday, July 16, 2012 12:00:00 AM
-	date = [NSDate dateWithString:@"2012-07-16 00:00:00 +0000"];
-	
-	// Should be Sunday, July 22, 2012 at 11:59:59 PM
-	STAssertEqualObjects([date endOfWeek], [NSDate dateWithString:@"2012-07-21 23:59:59 +0000"], nil);
+	XCTAssertEqualObjects([self.date endOfWeek], CYDateFromString(@"2012-07-21 23:59:59 +0000"));
 }
 
 - (void)testBeginningOfMonth {
-	// Thursday, July 19, 2012 2:30:45 PM
-	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
-	
-	// Should be July 1, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfMonth], [NSDate dateWithString:@"2012-07-01 00:00:00 +0000"], nil);
-	
-	// February 27, 2012 2:30:45 PM
-	date = [NSDate dateWithString:@"2012-02-27 14:30:45 +0000"];
-	
-	// Should be February 1, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfMonth], [NSDate dateWithString:@"2012-02-01 00:00:00 +0000"], nil);
+	XCTAssertEqualObjects([self.date beginningOfMonth], CYDateFromString(@"2012-07-01 00:00:00 +0000"));
 }
 
 - (void)testEndOfMonth {
-	// Thursday, July 19, 2012 2:30:45 PM
-	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];	
-
-	// Should be July 31, 2012 at 11:59:59 AM
-	STAssertEqualObjects([date endOfMonth], [NSDate dateWithString:@"2012-07-31 23:59:59 +0000"], nil);
+	XCTAssertEqualObjects([self.date endOfMonth], CYDateFromString(@"2012-07-31 23:59:59 +0000"));
 }
 
 - (void)testBeginningOfYear {
-	// Thursday, July 19, 2012 2:30:45 PM
-	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
-	
-	// Should be January 1, 2012 at 12:00:00 AM
-	STAssertEqualObjects([date beginningOfYear], [NSDate dateWithString:@"2012-01-01 00:00:00 +0000"], nil);
+	XCTAssertEqualObjects([self.date beginningOfYear], CYDateFromString(@"2012-01-01 00:00:00 +0000"));
 }
 
 - (void)testEndOfYear {
-	// Thursday, July 19, 2012 2:30:45 PM
-	NSDate *date = [NSDate dateWithString:@"2012-07-19 14:30:45 +0000"];
-	
-	// Should be December 31, 2012 at 11:59:59 PM
-	// Note: changed timezone (from +0000 to +0000) to take daylight savings time into account
-	STAssertEqualObjects([date endOfYear], [NSDate dateWithString:@"2012-12-31 23:59:59 +0000"], nil);
+	XCTAssertEqualObjects([self.date endOfYear], CYDateFromString(@"2012-12-31 23:59:59 +0000"));
 }
 
 @end
