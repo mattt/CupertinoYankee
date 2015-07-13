@@ -1,6 +1,6 @@
 # A Cupertino Yankee in Scott Forstall's Court
 
-**An NSDate Category With Locale-Aware Calculations for Beginning & End of Day, Week, Month, and Year**
+**An NSDate Category With Locale-Aware Calculations for Beginning, End, Next & Previous of Day, Week, Month, and Year**
 
 > **Thompson's Law**: Any code that performs sufficiently complex date calculations using naïve arithmetic means has a non-zero chance of causing a Y2K-style collapse of the global technology infrastructure.
 
@@ -13,29 +13,46 @@ Anyway, this library uses `NSCalendar` and `NSDateComponents` exclusively for da
 ## Usage
 
 ``` objective-c
-NSLog(@"Current Time: %@", date);
-NSLog(@"Beginning of Day:%@", [date beginningOfDay]);
-NSLog(@"End of Day:%@", [date endOfDay]);
-NSLog(@"Beginning of Week:%@", [date beginningOfWeek]);
-NSLog(@"End of Week:%@", [date endOfWeek]);
-NSLog(@"Beginning of Month:%@", [date beginningOfMonth]);
-NSLog(@"End of Month:%@", [date endOfMonth]);
-NSLog(@"Beginning of Year:%@", [date beginningOfYear]);
-NSLog(@"End of Year:%@", [date endOfYear]);
+NSLog(@"Current Time:       %@", date);
+NSLog(@"Beginning of Day:   %@", [date beginningOfDay]);
+NSLog(@"End of Day:         %@", [date endOfDay]);
+NSLog(@"Next Day:           %@", [date nextDay]);
+NSLog(@"Previous Day:       %@", [date previousDay]);
+NSLog(@"Beginning of Week:  %@", [date beginningOfWeek]);
+NSLog(@"End of Week:        %@", [date endOfWeek]);
+NSLog(@"Next Week:          %@", [date nextWeek]);
+NSLog(@"Previous Week:      %@", [date previousWeek]);
+NSLog(@"Beginning of Month: %@", [date beginningOfMonth]);
+NSLog(@"End of Month:       %@", [date endOfMonth]);
+NSLog(@"Next Month:         %@", [date nextMonth]);
+NSLog(@"Previous Month:     %@", [date previousMonth]);
+NSLog(@"Beginning of Year:  %@", [date beginningOfYear]);
+NSLog(@"End of Year:        %@", [date endOfYear]);
+NSLog(@"Next Year:          %@", [date nextYear]);
+NSLog(@"Previous Year:      %@", [date previousYear]);
 ```
 
 Result (Note the Time Zone and Daylight Savings Offsets)
 
 ```
-Current Time: 2013-10-19 13:29:26 +0000
-Beginning of Day: 2013-10-18 22:00:00 +0000
-End of Day: 2013-10-19 21:59:59 +0000
-Beginning of Week: 2013-10-12 22:00:00 +0000
-End of Week: 2013-10-19 21:59:59 +0000
-Beginning of Month: 2013-09-30 22:00:00 +0000
-End of Month: 2013-10-31 22:59:59 +0000
-Beginning of Year: 2012-12-31 23:00:00 +0000
-End of Year: 2013-12-31 22:59:59 +0000
+Current Time:       2015-07-13 14:26:08 +0000
+Beginning of Day:   2015-07-12 22:00:00 +0000
+End of Day:         2015-07-13 21:59:59 +0000
+Next Day:           2015-07-14 14:26:08 +0000
+Previous Day:       2015-07-12 14:26:08 +0000
+Beginning of Week:  2015-07-12 22:00:00 +0000
+End of Week:        2015-07-19 21:59:59 +0000
+Next Week:          2015-07-20 14:26:08 +0000
+Previous Week:      2015-07-06 14:26:08 +0000
+Beginning of Month: 2015-06-30 22:00:00 +0000
+End of Month:       2015-07-31 21:59:59 +0000
+Next Month:         2015-08-13 14:26:08 +0000
+Previous Month:     2015-06-13 14:26:08 +0000
+Beginning of Year:  2014-12-31 23:00:00 +0000
+End of Year:        2015-12-31 22:59:59 +0000
+Next Year:          2016-07-13 14:26:08 +0000
+Previous Year:      2014-07-13 14:26:08 +0000
+
 ```
 
 ## Contact

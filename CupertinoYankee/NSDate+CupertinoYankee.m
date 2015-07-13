@@ -63,6 +63,26 @@
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfDay] options:0] dateByAddingTimeInterval:-1];
 }
 
+- (NSDate *)nextDay {
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.day = 1;
+    
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
+- (NSDate *)previousDay {
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.day = -1;
+    
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
 #pragma mark -
 
 - (NSDate *)beginningOfWeek {
@@ -85,6 +105,26 @@
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfWeek] options:0] dateByAddingTimeInterval:-1];
 }
 
+- (NSDate *)nextWeek {
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.weekOfMonth = 1;
+    
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
+- (NSDate *)previousWeek {
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.weekOfMonth = -1;
+    
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
 #pragma mark -
 
 - (NSDate *)beginningOfMonth {
@@ -104,6 +144,26 @@
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfMonth] options:0] dateByAddingTimeInterval:-1];
 }
 
+- (NSDate *)nextMonth {
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.month = 1;
+    
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
+- (NSDate *)previousMonth {
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.month = -1;
+    
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
 #pragma mark -
 
 - (NSDate *)beginningOfYear {
@@ -121,6 +181,27 @@
     components.year = 1;
 
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfYear] options:0] dateByAddingTimeInterval:-1];
+}
+
+- (NSDate *)nextYear {
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.year = 1;
+    
+    return [calendar dateByAddingComponents:components toDate:self options:0];
+}
+
+
+- (NSDate *)previousYear {
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    components.year = -1;
+    
+    return [calendar dateByAddingComponents:components toDate:self options:0];
 }
 
 @end

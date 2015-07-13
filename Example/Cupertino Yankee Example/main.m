@@ -27,15 +27,23 @@
 int main (int argc, const char * argv[]) {
     @autoreleasepool {
         NSDate *date = [NSDate date];
-        NSLog(@"Current Time: %@", date);
-        NSLog(@"Beginning of Day: %@", [date beginningOfDay]);
-        NSLog(@"End of Day: %@", [date endOfDay]);
-        NSLog(@"Beginning of Week: %@", [date beginningOfWeek]);
-        NSLog(@"End of Week: %@", [date endOfWeek]);
+        NSLog(@"Current Time:       %@", date);
+        NSLog(@"Beginning of Day:   %@", [date beginningOfDay]);
+        NSLog(@"End of Day:         %@", [date endOfDay]);
+        NSLog(@"Next Day:           %@", [date nextDay]);
+        NSLog(@"Previous Day:       %@", [date previousDay]);
+        NSLog(@"Beginning of Week:  %@", [date beginningOfWeek]);
+        NSLog(@"End of Week:        %@", [date endOfWeek]);
+        NSLog(@"Next Week:          %@", [date nextWeek]);
+        NSLog(@"Previous Week:      %@", [date previousWeek]);
         NSLog(@"Beginning of Month: %@", [date beginningOfMonth]);
-        NSLog(@"End of Month: %@", [date endOfMonth]);
-        NSLog(@"Beginning of Year: %@", [date beginningOfYear]);
-        NSLog(@"End of Year: %@", [date endOfYear]);
+        NSLog(@"End of Month:       %@", [date endOfMonth]);
+        NSLog(@"Next Month:         %@", [date nextMonth]);
+        NSLog(@"Previous Month:     %@", [date previousMonth]);
+        NSLog(@"Beginning of Year:  %@", [date beginningOfYear]);
+        NSLog(@"End of Year:        %@", [date endOfYear]);
+        NSLog(@"Next Year:          %@", [date nextYear]);
+        NSLog(@"Previous Year:      %@", [date previousYear]);
     }
     
     return 0;

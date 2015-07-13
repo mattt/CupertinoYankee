@@ -67,6 +67,16 @@ static NSDate * CYDateFromString(NSString *string) {
 	XCTAssertEqualObjects([self.date endOfDay], CYDateFromString(@"2012-07-19 23:59:59 +0000"));
 }
 
+- (void)testNextDay {
+    
+    XCTAssertEqualObjects([self.date nextDay], CYDateFromString(@"2012-07-20 14:30:45 +0000"));
+}
+
+- (void)testPreviousDay {
+    
+    XCTAssertEqualObjects([self.date previousDay], CYDateFromString(@"2012-07-18 14:30:45 +0000"));
+}
+
 - (void)testBeginningOfWeekIsFirstWeekday {
     NSDate *today = [NSDate date];
     NSDate *beginningOfTodaysWeek = [today beginningOfWeek];
@@ -79,11 +89,19 @@ static NSDate * CYDateFromString(NSString *string) {
 }
 
 - (void)testBeginningOfWeek {
-	XCTAssertEqualObjects([self.date beginningOfWeek], CYDateFromString(@"2012-07-15 00:00:00 +0000"));
+	XCTAssertEqualObjects([self.date beginningOfWeek], CYDateFromString(@"2012-07-16 00:00:00 +0000"));
 }
 
 - (void)testEndOfWeek {
-	XCTAssertEqualObjects([self.date endOfWeek], CYDateFromString(@"2012-07-21 23:59:59 +0000"));
+	XCTAssertEqualObjects([self.date endOfWeek], CYDateFromString(@"2012-07-22 23:59:59 +0000"));
+}
+
+- (void)testNextWeek {
+    XCTAssertEqualObjects([self.date nextWeek], CYDateFromString(@"2012-07-26 14:30:45 +0000"));
+}
+
+- (void)testPreviousWeek {
+    XCTAssertEqualObjects([self.date previousWeek], CYDateFromString(@"2012-07-12 14:30:45 +0000"));
 }
 
 - (void)testBeginningOfMonth {
@@ -94,12 +112,28 @@ static NSDate * CYDateFromString(NSString *string) {
 	XCTAssertEqualObjects([self.date endOfMonth], CYDateFromString(@"2012-07-31 23:59:59 +0000"));
 }
 
+- (void)testNextMonth {
+    XCTAssertEqualObjects([self.date nextMonth], CYDateFromString(@"2012-08-19 14:30:45 +0000"));
+}
+
+- (void)testPreviousMonth {
+    XCTAssertEqualObjects([self.date previousMonth], CYDateFromString(@"2012-06-19 14:30:45 +0000"));
+}
+
 - (void)testBeginningOfYear {
 	XCTAssertEqualObjects([self.date beginningOfYear], CYDateFromString(@"2012-01-01 00:00:00 +0000"));
 }
 
 - (void)testEndOfYear {
 	XCTAssertEqualObjects([self.date endOfYear], CYDateFromString(@"2012-12-31 23:59:59 +0000"));
+}
+
+- (void)testNextYear {
+    XCTAssertEqualObjects([self.date nextYear], CYDateFromString(@"2013-07-19 14:30:45 +0000"));
+}
+
+- (void)testPreviousYear {
+    XCTAssertEqualObjects([self.date previousYear], CYDateFromString(@"2011-07-19 14:30:45 +0000"));
 }
 
 @end

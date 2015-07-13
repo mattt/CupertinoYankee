@@ -43,6 +43,20 @@
  */
 - (NSDate *)endOfDay;
 
+///-----------------------------------------
+/// @name Calculating Next / Previous Day
+///-----------------------------------------
+
+/**
+ Returns a new date that is one day (24 hours) ahead
+ */
+- (NSDate *)nextDay;
+
+/**
+ Returns a new date that is one day (24 hours) before
+ */
+- (NSDate *)previousDay;
+
 ///------------------------------------------
 /// @name Calculating Beginning / End of Week
 ///------------------------------------------
@@ -56,6 +70,20 @@
  Returns a new date with last second of the last weekday of the receiver, taking into account the current calendar's `firstWeekday` property.
  */
 - (NSDate *)endOfWeek;
+
+///------------------------------------------
+/// @name Calculating Next / Previous Week
+///------------------------------------------
+
+/**
+ Returns a new date that is one week (7 days) ahead
+ */
+- (NSDate *)nextWeek;
+
+/**
+ Returns a new date that is one week (7 days) before
+ */
+- (NSDate *)previousWeek;
 
 ///-------------------------------------------
 /// @name Calculating Beginning / End of Month
@@ -71,6 +99,20 @@
  */
 - (NSDate *)endOfMonth;
 
+///-------------------------------------------
+/// @name Calculating Next / Previous Month
+///-------------------------------------------
+
+/**
+ Returns a new date that is one month ahead
+ */
+- (NSDate *)nextMonth;
+
+/**
+ Returns a new date that is one month before
+ */
+- (NSDate *)previousMonth;
+
 ///------------------------------------------
 /// @name Calculating Beginning / End of Year
 ///------------------------------------------
@@ -84,5 +126,19 @@
  Returns a new date with the last second of the last day of the year of the receiver.
  */
 - (NSDate *)endOfYear;
+
+///------------------------------------------
+/// @name Calculating Next / Previous Year
+///------------------------------------------
+
+/**
+ Returns a new date that is one year ahead
+ */
+- (NSDate *)nextYear;
+
+/**
+ Returns a new date that is one year before
+ */
+- (NSDate *)previousYear;
 
 @end
