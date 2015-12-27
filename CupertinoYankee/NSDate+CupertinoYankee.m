@@ -71,6 +71,9 @@
     NSDateComponents *components = [calendar components:CYCalendarUnitYear | CYCalendarUnitMonth | CYCalendarUnitWeekday | CYCalendarUnitDay fromDate:self];
 
     NSInteger offset = components.weekday - (NSInteger)calendar.firstWeekday;
+	if (offset < 0) {
+		offset += calendar.weekdaySymbols.count;
+	}
     components.day = components.day - offset;
 
     return [calendar dateFromComponents:components];
