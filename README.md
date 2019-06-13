@@ -2,6 +2,10 @@
 
 **An NSDate Category With Locale-Aware Calculations for Beginning & End of Day, Week, Month, and Year**
 
+> This library is no longer maintained.
+> In iOS 7.0+ and macOS 10.9+,
+> use [`Calendar.range(of:in:for:)`](https://developer.apple.com/documentation/foundation/calendar/2293059-range) instead.
+
 ## Usage
 
 ```objective-c
