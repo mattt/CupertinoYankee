@@ -1,5 +1,0 @@
-language: objective-c
-before_install:
-    - brew update
-    - brew uninstall xctool && brew install xctool --HEAD
-script: xctool -workspace CupertinoYankee.xcworkspace -scheme 'Cupertino Yankee' -sdk macosx -configuration Release test -test-sdk macosx
