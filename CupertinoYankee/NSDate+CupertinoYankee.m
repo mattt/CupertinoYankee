@@ -1,6 +1,6 @@
 // NSDate+CupertinoYankee.m
 //
-// Copyright (c) 2012–2014 Mattt Thompson (http://mattt.me)
+// Copyright (c) 2012–2019 Mattt (https://mat.tt)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -50,16 +50,16 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
 
     NSDateComponents *components = [calendar components:CYCalendarUnitYear | CYCalendarUnitMonth | CYCalendarUnitDay fromDate:self];
-    
+
     return [calendar dateFromComponents:components];
 }
 
 - (NSDate *)endOfDay {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    
+
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.day = 1;
-    
+
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfDay] options:0] dateByAddingTimeInterval:-1];
 }
 
@@ -78,7 +78,7 @@
 
 - (NSDate *)endOfWeek {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    
+
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.weekOfMonth = 1;
 
@@ -91,16 +91,16 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
 
     NSDateComponents *components = [calendar components:CYCalendarUnitYear | CYCalendarUnitMonth fromDate:self];
-        
+
     return [calendar dateFromComponents:components];
 }
 
 - (NSDate *)endOfMonth {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    
+
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.month = 1;
-    
+
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfMonth] options:0] dateByAddingTimeInterval:-1];
 }
 
@@ -110,13 +110,13 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
 
     NSDateComponents *components = [calendar components:CYCalendarUnitYear fromDate:self];
-    
+
     return [calendar dateFromComponents:components];
 }
 
 - (NSDate *)endOfYear {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    
+
     NSDateComponents *components = [[NSDateComponents alloc] init];
     components.year = 1;
 
